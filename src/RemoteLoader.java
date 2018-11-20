@@ -17,8 +17,8 @@ public class RemoteLoader {
 		LightOffCommand lightOffCommand = new LightOffCommand(light);
 
 		//Implementing function for HomeSecuritySystem
-		HomeSecurityOpenDoorsCommand screenDropDownCommand = new HomeSecurityOpenDoorsCommand(homeSecuritySystem);
-		HomeSecurityLockDoorsCommand securityLockDoorsCommand = new HomeSecurityLockDoorsCommand(homeSecuritySystem);
+		HomeSecurityOpenDoorsCommand homeSecurityOpenDoorsCommand = new HomeSecurityOpenDoorsCommand(homeSecuritySystem);
+		HomeSecurityLockDoorsCommand homeSecurityLockDoorsCommand = new HomeSecurityLockDoorsCommand(homeSecuritySystem);
 		HomeSecurityCallPoliceCommand homeSecurityCallPoliceCommand = new HomeSecurityCallPoliceCommand(homeSecuritySystem);
 
 		//Implementing function for FireAlarm on Command
@@ -41,6 +41,35 @@ public class RemoteLoader {
 		//Implementing functionality for Television
 		TelevisionOnCommand televisionOnCommand = new TelevisionOnCommand(television);
 		TelevisionOffCommand televisionOffCommand = new TelevisionOffCommand(television);
+
+        /**
+         * Fire drill Macro: Procedures to
+         * take in case of a fire.
+         */
+		Command [] firedrill = {televisionOffCommand, musicSystemOffCommand,garageDoorOpenCommand,
+                                coolingSystemOffCommand,fireDeptCallCommand,homeSecurityOpenDoorsCommand,
+                                lightOffCommand};
+		Command [] burgularyMacro ={homeSecurityCallPoliceCommand,garageDoorCloseCommand,lightOnCommand,musicSystemOffCommand};
+
+		Command [] vacationMode = {televisionOffCommand,musicSystemOffCommand,garageDoorCloseCommand,lightOffCommand,homeSecurityLockDoorsCommand,coolingSystemOffCommand};
+
+		System.out.println();
+		System.out.println("STATUS : Executing Fire Drill procedure");
+		MacroCommand FiredrillMacro  = new MacroCommand(firedrill);
+		FiredrillMacro.execute();
+
+        System.out.println();
+		System.out.println("STATUS: Executing Burgular procedure");
+		MacroCommand burgularMacro = new MacroCommand(burgularyMacro);
+		burgularMacro.execute();
+
+		System.out.println();
+		System.out.println("STATUS: Executing Vacation procedure");
+		MacroCommand vacationMacro = new MacroCommand(vacationMode);
+		vacationMacro.execute();
+
+
+
 
 	}
 }

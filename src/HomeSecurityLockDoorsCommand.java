@@ -7,7 +7,7 @@ public class HomeSecurityLockDoorsCommand implements Command {
 
     @Override
     public void execute() {
-        homeSecurity.OpenDoors();
+        homeSecurity.LockDoors();
 
     }
 }
