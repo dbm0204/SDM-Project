@@ -1,4 +1,5 @@
 public class FireAlarm {
+    private int energyConsumption=200;
     public FireAlarm() {}
 
     public void on(){
@@ -11,5 +12,9 @@ public class FireAlarm {
 
     public void callFireDept(){
         System.out.println("STATUS: Calling Fire Department");
+    }
+
+    public int getEnergyConsumption() {
+        return energyConsumption;
     }
 }

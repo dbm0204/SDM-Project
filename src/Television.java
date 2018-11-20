@@ -1,4 +1,6 @@
 public class Television {
+    private int energyConsumption=800;
+
     public Television() {}
 
     public void on(){
@@ -6,5 +8,9 @@ public class Television {
     }
     public void off(){
         System.out.println("STATUS TV off");
+    }
+
+    public int getEnergyConsumption() {
+        return energyConsumption;
     }
 }

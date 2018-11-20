@@ -1,4 +1,6 @@
 public class HomeSecurity {
+    private int energyConsumption=400;
+
     public HomeSecurity() {}
 
     public void LockDoors(){
@@ -10,5 +12,9 @@ public class HomeSecurity {
 
     public void call(){
         System.out.println("STATUS: Calling Local Law enforcement");
+    }
+
+    public int getEnergyConsumption() {
+        return energyConsumption;
     }
 }

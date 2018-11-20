@@ -1,8 +1,17 @@
 public class CoolingSystem {
     private int temperature;
+    private int energyConsumption=100;
 
-    public CoolingSystem(int temperature) {
+    public CoolingSystem() {}
+
+    public CoolingSystem(int temperature, int energyConsumption) {
         this.temperature = temperature;
+        this.energyConsumption = energyConsumption;
+
+    }
+
+    public int getEnergyConsumption() {
+        return energyConsumption;
     }
 
     public int getTemperature() {

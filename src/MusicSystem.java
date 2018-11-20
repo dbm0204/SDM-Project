@@ -1,5 +1,6 @@
 public class MusicSystem {
     private String Titlename;
+    private int energyConsumption=700;
 
     public MusicSystem(String titlename) {
         Titlename = titlename;
@@ -21,4 +22,7 @@ public class MusicSystem {
         System.out.println("STATUS: MUSIC SYSTEM has been switched off");
     }
 
+    public int getEnergyConsumption() {
+        return energyConsumption;
+    }
 }
